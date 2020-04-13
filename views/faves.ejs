@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Favorite Movies</h1>
+	<a href="/">
+            <button>
+                &larr; Back Home
+            </button>
+        </a>
+	<% if(movies.length) { %>
+	<% movies.forEach(m => { %>
+	<h2>Title: <%= m.title %></h2>
+	<h3>Year: <%= m.year %></h3>
+	<img src="<%= m.poster %>">
+	<% }) %>
+<% } %>
+</body>
+</html>
