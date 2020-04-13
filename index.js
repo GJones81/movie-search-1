@@ -10,6 +10,7 @@ let app = express()
 
 // Set the template language to EJS
 app.set('view engine', 'ejs')
+app.use(express.urlencoded({extended: false}))
 
 // Declare routes
 app.get('/', (req, res) => {
@@ -35,6 +36,10 @@ app.get('/search', (req, res) => {
         res.send('Error - check logs!')
     })
 
+})
+
+app.post('/faves', (req, res) => {
+    console.log(req.body.title)
 })
 
 // Pick a port for it to listen on

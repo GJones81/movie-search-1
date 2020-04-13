@@ -21,6 +21,12 @@
                     <%= m.Title %> (<%= m.Year %>)
                 </h2>
                 <img src="<%=m.Poster%>" alt="Poster">
+                <form method="POST" action="/faves">
+                    <input type="hidden" name="title" value="<%= m.Title%>">
+                    <input type="hidden" name="year" value="<%= m.Year %>">
+                    <input type="hidden" name="poster" value="<%= m.Poster %>">
+                    <button type="submit">Add to my Favorites 😃</button>
+                </form>
             </div>
             <hr>
         <% }) %>
